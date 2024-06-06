@@ -29,8 +29,7 @@ public class WebSocketAuthIntercepter implements HandshakeInterceptor {
 
             if (cookies == null) {
                 log.error("쿠키가 없습니다.");
-                servletResponse.setStatus(401);
-                return false;
+                return true;
             } else {
                 for (Cookie cookie : cookies) {
                     log.info("================================ " + cookie.getName() + " : " + cookie.getValue());
